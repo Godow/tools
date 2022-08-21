@@ -1,6 +1,6 @@
 <template>
   <div v-for="(title, inx) in modulesTitle" :key="title" class="home-body">
-    <UnitModule :title="title">
+    <UnitModule :title="title" type="catalogue">
       <div class="conatiner">
         <div v-for="tool in tools[inx]" :key="tool.name">
           <a class="tool" :href="'#/' + tool.path">{{ tool.name }}</a>

@@ -15,7 +15,5 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  // overflow-y: auto;
-  // height: 100vh;
 }
 </style>
