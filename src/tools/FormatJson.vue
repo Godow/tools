@@ -20,12 +20,14 @@ export default {
     UnitModule,
   },
   data(): {
+    name: string;
     inputContent: string;
     output: string;
   } {
     return {
       inputContent: "",
       output: "",
+      name: "JSON格式化",
     };
   },
   methods: {

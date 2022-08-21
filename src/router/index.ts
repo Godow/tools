@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import HomeBody from "@/views/HomeBody.vue";
 import * as tools from "@/tools";
 import type { ITool } from "@/config.js";
@@ -9,6 +9,11 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeBody,
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: tools.ArticleGenerator,
   },
 ];
 
@@ -27,7 +32,8 @@ routesInfo.forEach((tool) => {
 });
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // import.meta.env.BASE_URL
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
 });
 

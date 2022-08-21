@@ -3,9 +3,7 @@
     <UnitModule :title="title">
       <div class="conatiner">
         <div v-for="tool in tools[inx]" :key="tool.name">
-          <a class="tool" :href="tool.path + '?name=' + tool.name">{{
-            tool.name
-          }}</a>
+          <a class="tool" :href="'#/' + tool.path">{{ tool.name }}</a>
         </div>
       </div>
     </UnitModule>

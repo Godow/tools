@@ -1,7 +1,7 @@
 <template>
   <div class="unit-module">
     <div>
-      <div v-if="pageTitle" class="unit-module-title">{{ pageTitle }}</div>
+      <div v-if="title" class="unit-module-title">{{ title }}</div>
       <div class="container">
         <slot></slot>
       </div>
@@ -13,24 +13,6 @@
 export default {
   name: "UnitModule",
   props: ["title", "toolsList"],
-  data(): {
-    urlTitle: string;
-  } {
-    return {
-      urlTitle: "",
-    };
-  },
-  computed: {
-    pageTitle(): string {
-      return this.title || this.urlTitle;
-    },
-  },
-  mounted() {
-    const name = location.search.match(/(?<=name=)[^&].+/)?.[0];
-    if (name) {
-      this.urlTitle = decodeURI(name);
-    }
-  },
 };
 </script>
 

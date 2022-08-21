@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts">
+// https://www.qiwangming.com/goupi/
 import UnitModule from "@/components/UnitModule.vue";
 import { generate } from "./lib/generator";
-import { createRandomPicker } from "./lib/random.js";
 import { corpus } from "./lib/corpus.js";
 export default {
   name: "ArticleGenerator",
@@ -29,11 +29,13 @@ export default {
     UnitModule,
   },
   data(): {
+    name: string;
     inputTitle: string;
     inputNum: number;
     article: string;
   } {
     return {
+      name: "狗屁不通文章生成器",
       inputTitle: "你也搁这冲浪呢",
       article: "",
       inputNum: 300,
@@ -44,16 +46,13 @@ export default {
   },
   methods: {
     async generate() {
-      // const pickTitle = createRandomPicker(corpus.title);
-
-      console.log(this.inputTitle, this.inputNum);
       if (!this.inputTitle || !Number(this.inputNum)) {
         return;
       }
       const pickTitle = this.inputTitle;
-      const config = { corpus, length: this.inputNum };
+      const config = { corpus, length: Number(this.inputNum) };
       const text = generate(pickTitle, config);
-      const blank = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      const blank = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
       this.article = `<section>${blank}${text.join(
         `</section ><section>${blank}`
       )}</section >`;
