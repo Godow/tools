@@ -8,7 +8,6 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "predeploy": "npm run build-only",
     "deploy": "gh-pages -d dist -r https://github.com/Godow/tools.git -b gh-pages"
   },
   "dependencies": {
