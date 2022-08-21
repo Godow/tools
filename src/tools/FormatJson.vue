@@ -52,6 +52,9 @@ export default {
 <style scoped lang="less">
 // @import "@/assets/main.less";
 .str-2-json {
+  .intro {
+    margin-left: 30px;
+  }
   .core-area {
     width: 100%;
     min-height: 100px;
@@ -63,6 +66,10 @@ export default {
       overflow-x: scroll;
       overflow-y: scroll;
       width: 40%;
+    }
+
+    .function-btn {
+      width: 120px;
     }
 
     .output-area {

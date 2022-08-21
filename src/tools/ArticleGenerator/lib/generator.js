@@ -11,8 +11,14 @@ function sentence(pick, replacer) {
   return ret;
 }
 
-export function generate(title, { corpus, min = 6000, max = 10000 } = {}) {
-  const articleLength = randomInt(min, max);
+export function generate(
+  title,
+  {
+    corpus,
+    length = 300, // 文章大概长度
+  } = {}
+) {
+  const articleLength = length;
   const { famous, bosh_before, bosh, said, conclude } = corpus;
   const [pickFamous, pickBoshBefore, pickBosh, pickSaid, pickConclude] = [
     famous,
@@ -27,8 +33,8 @@ export function generate(title, { corpus, min = 6000, max = 10000 } = {}) {
 
   while (totalLength < articleLength) {
     let section = "";
-    const sectionLength = randomInt(200, 500);
-    while (section.length < sectionLength || !/[銆傦紵]$/.test(section)) {
+    const sectionLength = randomInt(200, 500); // 每段200到500字
+    while (section.length < sectionLength || !/[。？]$/.test(section)) {
       const n = randomInt(0, 100);
       if (n < 20) {
         section += sentence(pickFamous, {
@@ -45,6 +51,5 @@ export function generate(title, { corpus, min = 6000, max = 10000 } = {}) {
     totalLength += section.length;
     article.push(section);
   }
-
   return article;
 }
