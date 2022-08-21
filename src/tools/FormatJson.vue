@@ -27,7 +27,7 @@ export default {
     return {
       inputContent: "",
       output: "",
-      name: "JSON格式化",
+      name: "JSON校验/格式化",
     };
   },
   methods: {
@@ -36,13 +36,8 @@ export default {
         return;
       }
       try {
-        let dealStr = this.inputContent;
-        dealStr = dealStr.replace(/'/g, '"');
-        this.output = JSON.stringify(
-          JSON.parse(dealStr.replace(/(\w+)(?=:)/g, '"$1"')),
-          null,
-          2
-        );
+        const dealStr = this.inputContent;
+        this.output = JSON.stringify(JSON.parse(dealStr), null, 2);
       } catch (e: { name: string; message: string }) {
         message.warning(e.message);
       }

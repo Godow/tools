@@ -25,7 +25,7 @@ const config: IConfig = {
       {
         type: "function",
         path: "FormatJson",
-        name: "JSON格式化",
+        name: "JSON校验/格式化",
       },
     ],
   },
