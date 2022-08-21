@@ -5,7 +5,9 @@
         <CommonHeader :title="config.title" />
       </template>
       <template v-slot:body>
-        <RouterView />
+        <CommonBody>
+          <RouterView />
+        </CommonBody>
       </template>
       <template v-slot:footer>
         <CommonFooter />
@@ -21,12 +23,14 @@
 <script lang="ts">
 import CommonLayout from "./components/CommonLayout.vue";
 import CommonHeader from "./components/CommonHeader.vue";
+import CommonBody from "./components/CommonBody.vue";
 import CommonFooter from "./components/CommonFooter.vue";
 import config from "@/config.js";
 export default {
   components: {
     CommonLayout,
     CommonHeader,
+    CommonBody,
     CommonFooter,
   },
   data() {

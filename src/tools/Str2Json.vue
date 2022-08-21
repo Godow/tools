@@ -1,27 +1,23 @@
 <template>
-  <CommonBody>
-    <UnitModule :title="name">
-      <template v-slot:container>
-        <div class="str-2-json">
-          <textarea v-model="inputContent" class="input-area"></textarea>
-          <a-button type="primary" shape="round" @click="transform()">
-            开始转换 ->
-          </a-button>
-          <textarea v-model="output" disabled class="output-area"></textarea>
-        </div>
-      </template>
-    </UnitModule>
-  </CommonBody>
+  <UnitModule :title="name">
+    <template v-slot:container>
+      <div class="str-2-json">
+        <textarea v-model="inputContent" class="input-area"></textarea>
+        <a-button type="primary" shape="round" @click="transform()">
+          开始转换 ->
+        </a-button>
+        <textarea v-model="output" disabled class="output-area"></textarea>
+      </div>
+    </template>
+  </UnitModule>
 </template>
 
 <script lang="ts">
-import CommonBody from "../components/CommonBody.vue";
 import UnitModule from "@/components/UnitModule.vue";
 import { message } from "ant-design-vue";
 export default {
   name: "Str2Json",
   components: {
-    CommonBody,
     UnitModule,
   },
   data(): {
@@ -55,7 +51,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 50vh;
+  height: 800px;
   .input-area {
     overflow-x: scroll;
     overflow-y: scroll;

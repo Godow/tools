@@ -1,29 +1,25 @@
 <template>
-  <CommonBody>
-    <div v-for="module in modules" :key="module" class="home-body">
-      <UnitModule :title="Object.keys(module)[0]">
-        <template v-slot:container>
-          <div class="conatiner">
-            <div v-for="tool in Object.values(module)[0]" :key="tool.name">
-              <a class="tool" :href="tool.path + '?name=' + tool.name">{{
-                tool.name
-              }}</a>
-            </div>
+  <div v-for="module in modules" :key="module" class="home-body">
+    <UnitModule :title="Object.keys(module)[0]">
+      <template v-slot:container>
+        <div class="conatiner">
+          <div v-for="tool in Object.values(module)[0]" :key="tool.name">
+            <a class="tool" :href="tool.path + '?name=' + tool.name">{{
+              tool.name
+            }}</a>
           </div>
-        </template>
-      </UnitModule>
-    </div>
-  </CommonBody>
+        </div>
+      </template>
+    </UnitModule>
+  </div>
 </template>
 
 <script lang="ts">
-import CommonBody from "@/components/CommonBody.vue";
 import UnitModule from "@/components/UnitModule.vue";
 import config from "@/config";
 export default {
   name: "HomeBody",
   components: {
-    CommonBody,
     UnitModule,
   },
   data() {
@@ -38,7 +34,6 @@ export default {
 @import "@/assets/main.less";
 .home-body {
   width: 100%;
-
   .conatiner {
     padding-bottom: 20px;
     display: flex;

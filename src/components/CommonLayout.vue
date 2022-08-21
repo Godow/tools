@@ -10,7 +10,7 @@
       <slot name="footer"></slot>
     </div>
 
-    <div class="fixed">
+    <!-- <div class="fixed">
       <div class="left-top">
         <slot name="left-top"></slot>
       </div>
@@ -26,7 +26,7 @@
       <div class="right-bottom">
         <slot name="right-bottom"></slot>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -44,13 +44,13 @@ export default {
   flex-direction: column;
 
   .header {
-    height: 100px;
+    height: auto;
   }
   .body {
     flex: 1;
   }
   .footer {
-    height: 100px;
+    height: auto;
   }
 
   .fixed {

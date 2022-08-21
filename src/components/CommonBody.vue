@@ -1,5 +1,5 @@
 <template>
-  <div class="common-body"><slot>333</slot></div>
+  <div class="common-body"><slot></slot></div>
 </template>
 
 <script lang="ts">
@@ -15,5 +15,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  // overflow-y: auto;
+  // height: 100vh;
 }
 </style>

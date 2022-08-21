@@ -55,48 +55,6 @@ const config: IConfig = {
         },
       ],
     },
-    {
-      编程相关2: [
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-      ],
-    },
-    {
-      编程相关2: [
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-      ],
-    },
-    {
-      编程相关2: [
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-      ],
-    },
   ],
 };
 

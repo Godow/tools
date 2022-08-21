@@ -1,6 +1,6 @@
 <template>
   <div class="common-header">
-    <div class="title" @click="goHome()">{{ title }}</div>
+    <div class="title" @click="goHome()">{{ title }}8888</div>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
 <style scoped lang="less">
 .common-header {
   width: 100%;
-  margin-top: 20px;
+  padding-top: 20px;
   .title {
     text-align: center;
     font-size: 30px;

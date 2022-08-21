@@ -10,5 +10,6 @@ export default {
 
 <style scoped lang="less">
 .common-footer {
+  background-color: gray;
 }
 </style>
