@@ -1,9 +1,9 @@
 <template>
   <div class="unit-module">
     <div>
-      <div v-if="pageTitle" class="title">{{ pageTitle }}</div>
+      <div v-if="pageTitle" class="unit-module-title">{{ pageTitle }}</div>
       <div class="container">
-        <slot name="container"></slot>
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -37,17 +37,18 @@ export default {
 <style scoped lang="less">
 @import "@/assets/main.less";
 .unit-module {
+  @vertical-padding: 20px;
   width: 100%;
   background-color: @main-color;
   border-radius: 20px;
   margin-top: 40px;
   margin-bottom: 20px;
+  padding: @vertical-padding 10px;
   box-shadow: 8px 8px 10px #888888;
-
-  .title {
+  .unit-module-title {
     display: block;
     position: absolute;
-    transform: translate(50px, -55%);
+    transform: translate(50px, calc(-55% - @vertical-padding));
     font-size: 18px;
     background-color: @core-color;
     padding: 5px 23px;
@@ -57,7 +58,7 @@ export default {
   }
 
   .container {
-    padding-top: 30px;
+    padding-top: 15px;
   }
 }
 </style>

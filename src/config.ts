@@ -1,61 +1,39 @@
-interface ITool {
+export type ITool = {
   type: "function" | "text";
   name: string;
   path: string;
-}
-interface ITools {
+};
+export type ITools = {
   [key: string]: ITool[];
-}
+};
 interface IConfig {
   title: string;
-  modules: ITools[];
+  modules: ITools;
 }
+
 const config: IConfig = {
   title: "米兔 - 工具集合",
-  modules: [
-    {
-      编程相关: [
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "字符串转JSON",
-        },
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-      ],
-    },
-    {
-      编程相关2: [
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-      ],
-    },
-    {
-      编程相关2: [
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-        {
-          type: "function",
-          path: "Str2Json",
-          name: "Str2Json",
-        },
-      ],
-    },
-  ],
+  modules: {
+    编程相关: [
+      {
+        type: "function",
+        path: "FormatJson",
+        name: "JSON格式化",
+      },
+      {
+        type: "function",
+        path: "ArticleGenerator",
+        name: "狗屁不通文章生成器",
+      },
+    ],
+    娱乐: [
+      {
+        type: "function",
+        path: "ArticleGenerator",
+        name: "狗屁不通文章生成器",
+      },
+    ],
+  },
 };
 
 export default config;

@@ -10,7 +10,7 @@ export default {
 
 <style scoped lang="less">
 .common-body {
-  width: 65%;
+  width: 70%;
   min-width: 700px;
   display: flex;
   flex-direction: column;

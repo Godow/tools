@@ -1,5 +1,5 @@
 <template>
-  <div class="common-footer">this is footer</div>
+  <div class="common-footer">当前版本：0.1</div>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,9 @@ export default {
 
 <style scoped lang="less">
 .common-footer {
-  background-color: gray;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

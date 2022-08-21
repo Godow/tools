@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeBody from "@/views/HomeBody.vue";
 import * as tools from "@/tools";
+import type { ITool } from "@/config.js";
 import config from "@/config.js";
 
 const routes = [
@@ -10,12 +11,10 @@ const routes = [
     component: HomeBody,
   },
 ];
-let routesInfo = [];
-config.modules.forEach((module) => {
-  Object.values(module).forEach((tools) => {
-    routesInfo = routesInfo.concat(Object.values(tools));
-  });
-});
+
+let routesInfo: ITool[] = [];
+
+routesInfo = routesInfo.concat(Object.values(config.modules).flat());
 
 routesInfo.forEach((tool) => {
   if (tool.type === "function") {

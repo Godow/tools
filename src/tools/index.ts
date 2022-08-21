@@ -1,2 +1,3 @@
-import Str2Json from "./Str2Json.vue";
-export { Str2Json };
+import FormatJson from "./FormatJson.vue";
+import ArticleGenerator from "./ArticleGenerator/index.vue";
+export { FormatJson, ArticleGenerator };

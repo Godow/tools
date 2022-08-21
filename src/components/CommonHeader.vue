@@ -1,6 +1,6 @@
 <template>
   <div class="common-header">
-    <div class="title" @click="goHome()">{{ title }}8888</div>
+    <div class="title" @click="goHome()">{{ title }}</div>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   props: ["title"],
   methods: {
     goHome() {
-      const homeUrl = location.href.match(/^https?:\/\/[^/]+/)?.[0];
+      const homeUrl = window.location.href.match(/^https?:\/\/[^/]+/)?.[0];
       if (homeUrl) {
         window.location.replace(homeUrl);
       }
