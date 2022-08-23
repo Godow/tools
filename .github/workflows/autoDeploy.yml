@@ -29,5 +29,5 @@ jobs:
         with:
           node-version: '12.x'
 
-      - name: Build and Deploy
-        run: npm run build-only && npm run deploy
+      - name: Install、Build and Deploy
+        run: npm install && npm run build-only && npm run deploy
