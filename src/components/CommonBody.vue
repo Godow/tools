@@ -11,9 +11,14 @@ export default {
 <style scoped lang="less">
 .common-body {
   width: 70%;
-  min-width: 700px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .common-body {
+    width: 100%;
+  }
 }
 </style>

@@ -1,12 +1,13 @@
 <template>
   <div :class="{ 'unit-module': true, 'full-screen': isFullScreen }">
     <div v-if="title" class="unit-module-title">{{ title }}</div>
-    <div
-      v-if="type !== 'catalogue'"
-      @click="fullScreen()"
-      class="full-screen-btn"
-    >
-      {{ fullScreenText }}
+    <div v-if="max" @click="fullScreen()" class="full-screen-btn pointer">
+      <template v-if="isFullScreen">
+        <CompressOutlined />
+      </template>
+      <template v-else>
+        <expandOutlined />
+      </template>
     </div>
     <div class="container">
       <slot></slot>
@@ -15,19 +16,25 @@
 </template>
 
 <script lang="ts">
+import { ExpandOutlined, CompressOutlined } from "@ant-design/icons-vue";
 export default {
   name: "UnitModule",
-  props: ["title", "toolsList", "type"],
-  // type: 模块类型，值为catalogue代表是目录，目录没有全屏功能
+  components: {
+    ExpandOutlined,
+    CompressOutlined,
+  },
+  props: {
+    title: String,
+    max: {
+      // 该模块是否有最大化(全屏)功能，默认有
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       isFullScreen: false,
     };
-  },
-  computed: {
-    fullScreenText() {
-      return this.isFullScreen ? "退出全屏" : "全屏";
-    },
   },
   methods: {
     fullScreen() {
@@ -84,12 +91,6 @@ export default {
   position: absolute;
   right: 25px;
   top: 15px;
-  &:hover {
-    cursor: pointer;
-  }
-  border: @core-color solid 1px;
-  border-radius: 10px;
-  padding: 3px 6px;
-  font-size: 10px;
+  font-size: 20px;
 }
 </style>
