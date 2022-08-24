@@ -1,9 +1,11 @@
 <template>
   <div v-for="(title, inx) in modulesTitle" :key="title" class="home-body">
-    <UnitModule :title="title" type="catalogue">
-      <div class="conatiner">
+    <UnitModule :title="title" :max="false">
+      <div class="container">
         <div v-for="tool in tools[inx]" :key="tool.name">
-          <a class="tool" :href="'#/' + tool.path">{{ tool.name }}</a>
+          <router-link class="tool" :to="tool.path">{{
+            tool.name
+          }}</router-link>
         </div>
       </div>
     </UnitModule>
@@ -31,8 +33,7 @@ export default {
 @import "@/assets/main.less";
 .home-body {
   width: 100%;
-  .conatiner {
-    /* padding-bottom: 20px; */
+  .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

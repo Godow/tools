@@ -7,13 +7,12 @@
 <script lang="ts">
 export default {
   name: "CommonHeader",
-  props: ["title"],
+  props: {
+    title: String,
+  },
   methods: {
     goHome() {
-      const homeUrl = window.location.href.match(/^https?:\/\/[^/]+/)?.[0];
-      if (homeUrl) {
-        window.location.replace(homeUrl);
-      }
+      window.location.replace(window.location.origin);
     },
   },
 };
