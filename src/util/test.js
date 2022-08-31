@@ -4,3 +4,7 @@ console.log("jl");
 })();
 
 console.log("123");
+
+window.vip = function () {
+  console.log("vvv");
+};
