@@ -6,8 +6,8 @@
         <input v-model="inputTitle" class="input-style" />
         <div class="intro">字数：</div>
         <input
-          v-model.number="inputNum"
-          @change="inputNum = inputNum.replace(/[^0-9]/g, '')"
+          v-model="inputNum"
+          @input="inputNum = inputNum.toString().replace(/[^0-9]/g, '')"
           class="input-style words-num"
         />
         <span class="function-btn" @click="generate()">生成</span>
@@ -31,14 +31,14 @@ export default {
   data(): {
     name: string;
     inputTitle: string;
-    inputNum: number;
+    inputNum: string;
     article: string;
   } {
     return {
       name: "狗屁不通文章生成器",
       inputTitle: "你也搁这冲浪呢",
       article: "",
-      inputNum: 300,
+      inputNum: "300",
     };
   },
   mounted() {

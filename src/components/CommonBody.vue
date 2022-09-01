@@ -1,5 +1,7 @@
 <template>
-  <div class="common-body"><slot></slot></div>
+  <div class="common-body">
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
