@@ -81,6 +81,7 @@ export default {
   top: 0;
   overflow-y: auto;
   margin: 0;
+  z-index: 9; // 最大化窗口时要在最顶部
 
   .unit-module-title {
     display: none;

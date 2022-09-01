@@ -20,6 +20,11 @@ const config: IConfig = {
         path: "ArticleGenerator",
         name: "狗屁不通文章生成器",
       },
+      {
+        type: "function",
+        path: "superVideo",
+        name: "超级视频",
+      },
     ],
     编程相关: [
       {
